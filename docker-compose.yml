@@ -1,0 +1,20 @@
+kwatani-directus:
+  build: .
+  ports:
+    - "80:80"
+    - "3306:3306"
+  environment:
+    DIRECTUS_APP_ENV: "production"
+    DIRECTUS_AUTH_PUBLICKEY: "6D561845E7DAC"
+    DIRECTUS_AUTH_SECRETKEY: "5BA556CC68E12"
+
+    DIRECTUS_DATABASE_HOST: "mysql"
+    DIRECTUS_DATABASE_PORT: "3306"
+
+    DIRECTUS_DATABASE_NAME: "kwatani_directus"
+    DIRECTUS_DATABASE_USERNAME: "kwatani_directus"
+    DIRECTUS_DATABASE_PASSWORD: "SDF31239aslkj@!@298"
+  volumes:
+    - ./data/config:/app/config
+    - ./data/uploads:/app/public/uploads
+    - ./data/mysql:/var/lib/mysql
